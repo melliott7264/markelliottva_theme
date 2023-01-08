@@ -27,10 +27,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 					<!-- <img id="fraktur-border-bottom" src="http://markelliottvapersonal.local/wp-content/uploads/2023/01/SerenityPrayer_Border_bottom.jpg" alt="fraktur border bottom" /> -->
 
 					<div class="site-info">
-						<p id='copyright'>©Copyright 2023 Mark Elliott </p>
-						<span>
+						<p id='copyright' class="text-center">©Copyright 2023 Mark Elliott </p>
+						<!-- <span>
 						<?php understrap_site_info(); ?>
-						</span>
+						</span> -->
 					</div><!-- .site-info -->
 
 				</footer><!-- #colophon -->
