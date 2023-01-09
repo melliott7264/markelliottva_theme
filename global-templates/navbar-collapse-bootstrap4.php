@@ -24,8 +24,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 		
 	</div>
 	<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
-	<a href="https://range.markelliottva.com" target="_blank"><img id="range-log-logo" src="/wp-content/uploads/2023/01/RangeLogIcon.jpg" alt="range log application link" /></a>
-
+	<div id="range-log-group">
+		<a href="https://range.markelliottva.com" target="_blank"><img id="range-log-logo" src="/wp-content/uploads/2023/01/RangeLogIcon.jpg" alt="range log application link" /></a>
+		<!-- <a id="range-log-instructions" class="text-center" href="https://markelliottva.com/2022/09/muzzleloader-range-log/" >Range Log Instructions</a> -->
+	</div>
 <?php if ( 'container' === $container ) : ?>
 	<div class="container">
 <?php endif; ?>
