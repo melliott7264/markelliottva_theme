@@ -30,7 +30,7 @@ Do not modify the parent Understrap theme. Instead, download a copy of the Under
 Full developer documentation: https://docs.understrap.com
 */
 
-body {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -74,6 +74,13 @@ body {
   max-width: 350px;
   top: 0%;
   right: 0%;
+}
+
+#artist-image {
+  display: block;
+  width: 50%;
+  height: auto;
+  margin: 0 auto;
 }
 
 
