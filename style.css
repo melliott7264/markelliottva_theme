@@ -36,6 +36,12 @@ Full developer documentation: https://docs.understrap.com
   box-sizing: border-box;
 }
 
+header {
+  position: sticky;
+  top: 0px;
+  z-index: 999;
+}
+
 #brand {
   display: flex;
   justify-content: flex-start;

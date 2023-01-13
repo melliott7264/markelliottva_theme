@@ -43,7 +43,7 @@ if ( is_front_page() ) {
             <h1 class="text-center">A Man for All Centuries</h1>
 
                 <h2>IT Professional</h2>
-                <a href="https://markelliottvapersonal.local/professional/"><img id="it-pro-image" src="/wp-content/uploads/2023/01/ComputerDesk-scaled.jpg" alt="Mark Elliott's computer" /></a>
+                <a href="https://markelliottvapersonal.local/professional/"><img id="it-pro-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" alt="Mark Elliott's computer" /></a>
                 <p id="it-opening-text">Mark Elliott has mostly earned his living in Information Technology.   He spent the first 20 or so years 
                     of his working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes.  
                     He also briefly taught technology at the high school and college level in the early 2000's.  After 12 years of trying to make a go of working as a
