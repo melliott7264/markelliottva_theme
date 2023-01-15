@@ -46,7 +46,6 @@ header {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  
 }
 
 #brand-logo {
@@ -72,11 +71,10 @@ header {
   justify-content: space-between;
 }
 
-
 #range-log-logo {
   position: absolute;
-  width:30%;
-  height:auto;
+  width: 30%;
+  height: auto;
   max-width: 350px;
   top: 0%;
   right: 0%;
@@ -89,12 +87,21 @@ header {
   margin: 0 auto;
 }
 
+#wrapper-hero {
+  position: sticky;
+  top: 225px;
+  width: 66%;
+  margin: 0 auto;
+  z-index: 998;
+}
+
+.content-area {
+  margin: 0 auto;
+  z-index: 1;
+}
 
 @media screen and (max-width: 510px) {
-
   #site-title {
     font-size: 2em;
   }
-  
 }
-
