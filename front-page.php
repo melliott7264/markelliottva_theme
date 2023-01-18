@@ -45,11 +45,13 @@ if ( is_front_page() ) {
 
                         <h2>IT Professional</h2>
                         <a href="https://markelliottvapersonal.local/professional/"><img id="it-pro-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" alt="Mark Elliott's computer" /></a>
+                        <i class="fa-solid fa-chevron-right"></i>
+                        <i class="fa-solid fa-chevron-left"></i>
                         <p id="it-opening-text">Mark Elliott has mostly earned his living in Information Technology.   He spent the first 20 or so years 
                             of his working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes.  
                             He also briefly taught technology at the high school and college level in the early 2000's.  After 12 years of trying to make a go of working as a
                         traditional craftsman and artist, he is now back in IT as a developer.  Unless you are extraordinarily talented and productive, one has to go where the market is to make a decent living.</p>
-
+                        
                     </div>
 				     
                 </section>

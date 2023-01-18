@@ -58,24 +58,39 @@ const buildCarousel = (i) => {
           " />"
       );
 
+    // build icon lines
+    const leftChevronIcon = jQuery("<i>").addClass(
+      "fa-solid fa-circle-chevron-left fa-2xl"
+    );
+    const rightChevronIcon = jQuery("<i>").addClass(
+      "fa-solid fa-circle-chevron-right fa-2xl"
+    );
+
     // build carousel slide p line  - class="slide-text"
     const slideText = jQuery("<p>")
       .addClass("slide-text")
       .text(heroContentArray[i].heroText);
 
     // append lines to slide and then to slide container
-    newCarouselSlideEl.append(slideHeading, slideImage, slideText);
+    newCarouselSlideEl.append(
+      slideHeading,
+      slideImage,
+      leftChevronIcon,
+      rightChevronIcon,
+      slideText
+    );
   });
 };
 
+// must setup setTimeout using Promise/async/await for it to execute properly
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const loadArray = async () => {
   for (let i = 0; i < heroContentArray.length; i++) {
     buildCarousel(i);
-    await delay(5000);
+    await delay(7000);
   }
-  loadArray();
+  loadArray(); // infinite loop until navigate away
 };
 
 loadArray();
