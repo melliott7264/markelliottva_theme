@@ -27,43 +27,55 @@ const heroContentArray = [
   },
 ];
 
-jquery(document).ready(function () {
-  // define carousel slide container - section
-  const carouselContainerEl = jquery("#carousel-container");
-  // define carousel slide to be replaced - div
-  const carouselSlideEl = jquery("div.carousel-slide");
+const buildCarousel = (i) => {
+  jQuery(document).ready(function () {
+    // define carousel slide container - section
+    const carouselContainerEl = jQuery("#carousel-container");
 
-  // remove existing carouselSlideEl
-  if (carouselSlideEl) {
-    carouselSlideEl.remove();
-  }
+    // remove existing carouselSlideEl
+    if (jQuery(".carousel-slide")) {
+      jQuery(".carousel-slide").remove();
+    }
 
-  // Create slides per array
+    // rebuild carousel-slide div
+    const newCarouselSlideEl = jQuery("<div>").addClass("carousel-slide");
+    carouselContainerEl.append(newCarouselSlideEl);
 
+    // build carousel slide h2 line
+    const slideHeading = jQuery("<h2>")
+      .addClass("slide-heading")
+      .text(heroContentArray[i].heroHeading);
+
+    // build carousel slide a/img line  - class="slide-image"
+    const slideImage = jQuery("<a>")
+      .addClass("slide-image")
+      .attr("href", heroContentArray[i].imageHref)
+      .html(
+        "<img src=" +
+          heroContentArray[i].imageSrc +
+          " alt=" +
+          heroContentArray[i].imageAlt +
+          " />"
+      );
+
+    // build carousel slide p line  - class="slide-text"
+    const slideText = jQuery("<p>")
+      .addClass("slide-text")
+      .text(heroContentArray[i].heroText);
+
+    // append lines to slide and then to slide container
+    newCarouselSlideEl.append(slideHeading, slideImage, slideText);
+  });
+};
+
+const delay = (ms) => new Promise((res) => setTimeout(res, ms));
+
+const loadArray = async () => {
   for (let i = 0; i < heroContentArray.length; i++) {
-    // setinterval on slide display to 5secs
-
-    setInterval(() => {
-      // rebuild carousel-slide div
-      const newCarouselSlideEl = jquery("<div>").addClass("carousel-slide");
-      carouselContainerEl.append(newCarouselSlideEl);
-
-      // build carousel slide h2 line
-      const slideHeading = jquery("<h2>")
-        .addClass("slide-heading")
-        .text(heroContentArray[i].heroHeading);
-
-      // build carousel slide a/img line  - class="slide-image"
-      const slideImage = jquery("<a>")
-        .addClass("slide-image")
-        .attr("href", imageHref)
-        .html("img src=" + imageSrc + " alt=" + imageAlt + " />");
-
-      // build carousel slide p line  - class="slide-text"
-      const slideText = jquery("<p>").addClass("slide-text").text(heroText);
-
-      // append lines to slide and then to slide container
-      carouselContainerEl.append(slideHeading, slideImage, slideText);
-    }, 5000);
+    buildCarousel(i);
+    await delay(5000);
   }
-});
+  loadArray();
+};
+
+loadArray();

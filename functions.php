@@ -17,5 +17,9 @@ add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'style', get_stylesheet_uri() ); // use style.css from theme folder
 });
 
-
+// The following loads the script to implement the hero carousel on the front page
+function my_theme_scripts() {
+    wp_enqueue_script( 'carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ), '1.0.0', true );
+}
+add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
