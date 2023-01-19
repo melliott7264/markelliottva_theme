@@ -73,14 +73,15 @@ const buildCarousel = (i) => {
     let pausePlayIcon = "";
 
     if (pauseFlag === true) {
-      pausePlayIcon = jQuery("<i>").addClass(
-        "fa-solid fa-circle-play fa-2xl slide-play-btn"
-      );
+      pausePlayIcon = "<i class='fa-solid fa-circle-play fa-2xl'></i>";
     } else {
-      pausePlayIcon = jQuery("<i>").addClass(
-        "fa-solid fa-circle-pause fa-2xl slide-pause-btn"
-      );
+      pausePlayIcon = "<i class='fa-solid fa-circle-pause fa-2xl'></i>";
     }
+
+    // build pause/play button
+    const pausePlayButton = jQuery("<button>")
+      .attr("id", "slide-pause-button")
+      .html(pausePlayIcon);
 
     const rightChevronIcon = jQuery("<i>").addClass(
       "fa-solid fa-circle-chevron-right fa-2xl slide-right-btn"
@@ -96,7 +97,7 @@ const buildCarousel = (i) => {
       slideHeading,
       slideImage,
       leftChevronIcon,
-      pausePlayIcon,
+      pausePlayButton,
       rightChevronIcon,
       slideText
     );
@@ -104,10 +105,10 @@ const buildCarousel = (i) => {
 };
 
 // add event listener for pause/play button
-jQuery(".slide-pause-btn").on("click", function () {
+jQuery("#slide-pause-btn").on("click", function () {
   pauseFlag = true;
 });
-jQuery(".slide-play-btn").on("click", function () {
+jQuery("#slide-play-btn").on("click", function () {
   pauseFlay = false;
   loadArray();
 });
@@ -116,10 +117,10 @@ jQuery(".slide-play-btn").on("click", function () {
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const loadArray = async () => {
-//   debugger;
+  //   debugger;
   for (let i = currentSlide; i < heroContentArray.length; i++) {
     if (pauseFlag === false) {
-        currentSlide = i;
+      currentSlide = i;
       buildCarousel(i);
       if (i === heroContentArray.length - 1) {
         currentSlide = 0;

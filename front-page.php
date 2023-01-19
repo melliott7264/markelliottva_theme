@@ -46,7 +46,7 @@ if ( is_front_page() ) {
                         <h2>IT Professional</h2>
                         <a href="https://markelliottvapersonal.local/professional/"><img id="it-pro-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" alt="Mark Elliott's computer" /></a>
                         <i class="fa-solid fa-circlechevron-right"></i>
-                        <i class="fa-solid fa-circle-pause"></i>
+                        <button id="slide-pause-btn"><i class="fa-solid fa-circle-pause"></i></button>
                         <i class="fa-solid fa-circlechevron-left"></i>
                         <p id="it-opening-text">Mark Elliott has mostly earned his living in Information Technology.   He spent the first 20 or so years 
                             of his working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes.  
