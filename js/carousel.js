@@ -33,8 +33,6 @@ let currentSlide = 0;
 
 const buildCarousel = (i) => {
   jQuery(document).ready(function () {
-    // set current slide
-    // currentSlide = i;
     // define carousel slide container - section
     const carouselContainerEl = jQuery("#carousel-container");
 
@@ -73,15 +71,14 @@ const buildCarousel = (i) => {
     let pausePlayIcon = "";
 
     if (pauseFlag === true) {
-      pausePlayIcon = "<i class='fa-solid fa-circle-play fa-2xl'></i>";
+      pausePlayIcon = jQuery("<i>")
+        .attr("id", "slide-play-button")
+        .addClass("fa-solid fa-circle-play fa-2xl");
     } else {
-      pausePlayIcon = "<i class='fa-solid fa-circle-pause fa-2xl'></i>";
+      pausePlayIcon = jQuery("<i>")
+        .attr("id", "slide-pause-button")
+        .addClass("fa-solid fa-circle-pause fa-2xl");
     }
-
-    // build pause/play button
-    const pausePlayButton = jQuery("<button>")
-      .attr("id", "slide-pause-button")
-      .html(pausePlayIcon);
 
     const rightChevronIcon = jQuery("<i>").addClass(
       "fa-solid fa-circle-chevron-right fa-2xl slide-right-btn"
@@ -97,28 +94,18 @@ const buildCarousel = (i) => {
       slideHeading,
       slideImage,
       leftChevronIcon,
-      pausePlayButton,
+      pausePlayIcon,
       rightChevronIcon,
       slideText
     );
   });
 };
 
-// add event listener for pause/play button
-jQuery("#slide-pause-btn").on("click", function () {
-  pauseFlag = true;
-});
-jQuery("#slide-play-btn").on("click", function () {
-  pauseFlay = false;
-  loadArray();
-});
-
 // must setup setTimeout using Promise/async/await for it to execute properly
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
-const loadArray = async () => {
-  //   debugger;
-  for (let i = currentSlide; i < heroContentArray.length; i++) {
+const loadArray = async (slide) => {
+  for (let i = slide; i < heroContentArray.length; i++) {
     if (pauseFlag === false) {
       currentSlide = i;
       buildCarousel(i);
@@ -126,12 +113,36 @@ const loadArray = async () => {
         currentSlide = 0;
       }
     } else {
-      buildCarousel(i);
+      if (i <= 0) {
+        lastSlideIndex = heroContentArray.length - 1;
+      } else {
+        lastSlideIndex = i - 1;
+      }
+      buildCarousel(lastSlideIndex);
       return;
     }
     await delay(5000);
   }
-  loadArray(); // infinite loop until navigate away
+  loadArray(0); // infinite loop until navigate away
 };
 
-loadArray();
+jQuery("#carousel-container").on(
+  "click",
+  "#slide-pause-button",
+  function (event) {
+    console.log("clicked on pause button");
+    pauseFlag = true;
+    loadArray(currentSlide);
+  }
+);
+jQuery("#carousel-container").on(
+  "click",
+  "#slide-play-button",
+  function (event) {
+    console.log("clicked on play button");
+    pauseFlag = false;
+    loadArray(currentSlide);
+  }
+);
+
+loadArray(0);
