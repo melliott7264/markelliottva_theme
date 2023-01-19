@@ -27,6 +27,9 @@ const heroContentArray = [
   },
 ];
 
+// status flags
+let pauseFlag = false;
+
 const buildCarousel = (i) => {
   jQuery(document).ready(function () {
     // define carousel slide container - section
@@ -62,6 +65,20 @@ const buildCarousel = (i) => {
     const leftChevronIcon = jQuery("<i>").addClass(
       "fa-solid fa-circle-chevron-left fa-2xl"
     );
+
+    // When paused use play icon -  fa-circle-play
+    let pausePlayIcon = "";
+
+    if (pauseFlag === true) {
+      pausePlayIcon = jQuery("<i>").addClass(
+        "fa-solid fa-circle-play fa-2xl"
+      );
+    } else {
+      pausePlayIcon = jQuery("<i>").addClass(
+        "fa-solid fa-circle-pause fa-2xl"
+      );
+    }
+
     const rightChevronIcon = jQuery("<i>").addClass(
       "fa-solid fa-circle-chevron-right fa-2xl"
     );
@@ -76,6 +93,7 @@ const buildCarousel = (i) => {
       slideHeading,
       slideImage,
       leftChevronIcon,
+      pausePlayIcon,
       rightChevronIcon,
       slideText
     );

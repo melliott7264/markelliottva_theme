@@ -113,6 +113,15 @@ header {
   z-index: 999;
 }
 
+.fa-circle-pause, .fa-circle-play {
+  position: absolute;
+  bottom: 0%;
+  left: 49%;
+  z-index: 999;
+}
+
+
+
 .fa-circle-chevron-left {
   position: absolute;
   bottom: 0%;
