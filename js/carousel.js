@@ -29,9 +29,12 @@ const heroContentArray = [
 
 // status flags
 let pauseFlag = false;
+let currentSlide = 0;
 
 const buildCarousel = (i) => {
   jQuery(document).ready(function () {
+    // set current slide
+    // currentSlide = i;
     // define carousel slide container - section
     const carouselContainerEl = jQuery("#carousel-container");
 
@@ -63,7 +66,7 @@ const buildCarousel = (i) => {
 
     // build icon lines
     const leftChevronIcon = jQuery("<i>").addClass(
-      "fa-solid fa-circle-chevron-left fa-2xl"
+      "fa-solid fa-circle-chevron-left fa-2xl slide-left-btn"
     );
 
     // When paused use play icon -  fa-circle-play
@@ -71,16 +74,16 @@ const buildCarousel = (i) => {
 
     if (pauseFlag === true) {
       pausePlayIcon = jQuery("<i>").addClass(
-        "fa-solid fa-circle-play fa-2xl"
+        "fa-solid fa-circle-play fa-2xl slide-play-btn"
       );
     } else {
       pausePlayIcon = jQuery("<i>").addClass(
-        "fa-solid fa-circle-pause fa-2xl"
+        "fa-solid fa-circle-pause fa-2xl slide-pause-btn"
       );
     }
 
     const rightChevronIcon = jQuery("<i>").addClass(
-      "fa-solid fa-circle-chevron-right fa-2xl"
+      "fa-solid fa-circle-chevron-right fa-2xl slide-right-btn"
     );
 
     // build carousel slide p line  - class="slide-text"
@@ -100,13 +103,32 @@ const buildCarousel = (i) => {
   });
 };
 
+// add event listener for pause/play button
+jQuery(".slide-pause-btn").on("click", function () {
+  pauseFlag = true;
+});
+jQuery(".slide-play-btn").on("click", function () {
+  pauseFlay = false;
+  loadArray();
+});
+
 // must setup setTimeout using Promise/async/await for it to execute properly
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
 const loadArray = async () => {
-  for (let i = 0; i < heroContentArray.length; i++) {
-    buildCarousel(i);
-    await delay(7000);
+//   debugger;
+  for (let i = currentSlide; i < heroContentArray.length; i++) {
+    if (pauseFlag === false) {
+        currentSlide = i;
+      buildCarousel(i);
+      if (i === heroContentArray.length - 1) {
+        currentSlide = 0;
+      }
+    } else {
+      buildCarousel(i);
+      return;
+    }
+    await delay(5000);
   }
   loadArray(); // infinite loop until navigate away
 };
