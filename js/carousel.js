@@ -48,10 +48,10 @@ const buildCarousel = (i) => {
 
     // build carousel slide a/img line  - class="slide-image"
     const slideImage = jQuery("<a>")
-      .addClass("slide-image")
+      .addClass("slide-image-link")
       .attr("href", heroContentArray[i].imageHref)
       .html(
-        "<img src=" +
+        "<img class='slide-image' src=" +
           heroContentArray[i].imageSrc +
           " alt=" +
           heroContentArray[i].imageAlt +
