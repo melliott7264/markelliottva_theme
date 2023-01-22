@@ -1,7 +1,7 @@
 // An application to put a continuous slide show on the front page.
 const heroContentArray = [
   {
-    heroHeading: "IT Professional",
+    heroHeading: "21st Century",
     imageHref: "https://markelliottvapersonal.local/professional/",
     imageSrc: "/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg",
     imageAlt: "Mark Elliott's computer",
@@ -9,7 +9,7 @@ const heroContentArray = [
       "Mark Elliott has mostly earned his living in Information Technology. He spent the first 20 or so years of his working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes. He also briefly taught technology at the high school and college level in the early 2000's.  After 12 years of trying to make a go of working as a traditional craftsman and artist, he is now back in IT as a developer.  Unless you are extraordinarily talented and productive, one has to go where the market is to make a decent living.",
   },
   {
-    heroHeading: "Craftsman",
+    heroHeading: "18th Century",
     imageHref: "https://markelliottvapersonal.local/craftsman/",
     imageSrc: "/wp-content/uploads/2021/09/WPRifle19-1-scaled.jpg",
     imageAlt: "early Virginia flintlock rifle",
@@ -17,7 +17,7 @@ const heroContentArray = [
       "Since he was a teenager, the love of Mark's life has been the American longrifle and longrifle culture.  Over the years, Mark has produced many longrifles; although not as many as he would have liked.  He has also produced countless powder horns and shot pouches as well as a few knives.  Unfortunately, these interests comprise a limited market, and Mark's productivity was never that high.  Making a good living in the traditional crafts has always been elusive.  Those who do make a living at it, are involved in a lot of different aspects of the craft.",
   },
   {
-    heroHeading: "Artist",
+    heroHeading: "19th Century",
     imageHref: "https://markelliottvapersonal.local/artist/",
     imageSrc:
       "/wp-content/uploads/2019/11/marriage_certificate_20190529_0001-scaled.jpg",
@@ -104,21 +104,18 @@ const buildCarousel = (i) => {
 // must setup setTimeout using Promise/async/await for it to execute properly
 const delay = (ms) => new Promise((res) => setTimeout(res, ms));
 
+// function to start carousel passing in the slide index to start
 const loadArray = async (slide) => {
+  // start carousel at passed slide index
   for (let i = slide; i < heroContentArray.length; i++) {
+    // if pause button has been not been pressed
     if (pauseFlag === false) {
+      // set current slide to index and pass to function to display slide
       currentSlide = i;
-      buildCarousel(i);
-      if (i === heroContentArray.length - 1) {
-        currentSlide = 0;
-      }
+      buildCarousel(currentSlide);
     } else {
-      if (i <= 0) {
-        lastSlideIndex = heroContentArray.length - 1;
-      } else {
-        lastSlideIndex = i - 1;
-      }
-      buildCarousel(lastSlideIndex);
+      // display current slide
+      buildCarousel(currentSlide);
       return;
     }
     await delay(5000);

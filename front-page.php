@@ -43,7 +43,7 @@ if ( is_front_page() ) {
                 <section id="carousel-container"> 
                     <div class="carousel-slide">
 
-                        <h2>IT Professional</h2>
+                        <!-- <h2>IT Professional</h2>
                         <a href="https://markelliottvapersonal.local/professional/"><img id="it-pro-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" alt="Mark Elliott's computer" /></a>
                         <i class="fa-solid fa-circlechevron-right"></i>
                         <button id="slide-pause-btn"><i class="fa-solid fa-circle-pause"></i></button>
@@ -52,7 +52,7 @@ if ( is_front_page() ) {
                             of his working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes.  
                             He also briefly taught technology at the high school and college level in the early 2000's.  After 12 years of trying to make a go of working as a
                         traditional craftsman and artist, he is now back in IT as a developer.  Unless you are extraordinarily talented and productive, one has to go where the market is to make a decent living.</p>
-                        
+                         -->
                     </div>
 				     
                 </section>
