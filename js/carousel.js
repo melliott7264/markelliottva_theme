@@ -127,19 +127,42 @@ jQuery("#carousel-container").on(
   "click",
   "#slide-pause-button",
   function (event) {
-    console.log("clicked on pause button");
     pauseFlag = true;
     loadArray(currentSlide);
   }
 );
+
 jQuery("#carousel-container").on(
   "click",
   "#slide-play-button",
   function (event) {
-    console.log("clicked on play button");
     pauseFlag = false;
     loadArray(currentSlide);
   }
 );
+
+jQuery("#carousel-container").on("click", ".slide-right-btn", function (event) {
+  console.log("clicked right button");
+  pauseFlag = true;
+  // if at last slide, go to first slide, otherwise increment currentSlide
+  if (currentSlide === heroContentArray.length - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  loadArray(currentSlide);
+});
+
+jQuery("#carousel-container").on("click", ".slide-left-btn", function (event) {
+  console.log("clicked left button");
+  pauseFlag = true;
+  // if at first slide, got to last slide, otherwise decrement currentSlide
+  if (currentSlide === 0) {
+    currentSlide = heroContentArray.length - 1;
+  } else {
+    currentSlide--;
+  }
+  loadArray(currentSlide);
+});
 
 loadArray(0);
