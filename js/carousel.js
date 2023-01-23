@@ -142,7 +142,6 @@ jQuery("#carousel-container").on(
 );
 
 jQuery("#carousel-container").on("click", ".slide-right-btn", function (event) {
-  console.log("clicked right button");
   pauseFlag = true;
   // if at last slide, go to first slide, otherwise increment currentSlide
   if (currentSlide === heroContentArray.length - 1) {
@@ -154,7 +153,6 @@ jQuery("#carousel-container").on("click", ".slide-right-btn", function (event) {
 });
 
 jQuery("#carousel-container").on("click", ".slide-left-btn", function (event) {
-  console.log("clicked left button");
   pauseFlag = true;
   // if at first slide, got to last slide, otherwise decrement currentSlide
   if (currentSlide === 0) {

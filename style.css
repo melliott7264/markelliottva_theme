@@ -36,6 +36,32 @@ Full developer documentation: https://docs.understrap.com
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "Archivo_Black";
+  src: url("/wp-content/themes/markelliottva/fonts/Archivo_Black/ArchivoBlack-Regular.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: "Archivo_Black";
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-weight: 900;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
 header {
   position: sticky;
   top: 0px;
@@ -59,6 +85,7 @@ header {
 }
 
 #site-title {
+  font-family: "Archivo_Black";
   position: absolute;
   top: 100px;
   right: 24px;
@@ -87,6 +114,11 @@ header {
   margin: 0 auto;
 }
 
+.nav-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
 #wrapper-hero {
   position: sticky;
   top: 225px;
@@ -113,13 +145,13 @@ header {
   z-index: 999;
 }
 
-.fa-circle-pause, .fa-circle-play {
+.fa-circle-pause,
+.fa-circle-play {
   position: absolute;
   bottom: 0%;
   left: 49%;
   z-index: 999;
 }
-
 
 .fa-circle-chevron-left {
   position: absolute;
@@ -133,7 +165,7 @@ header {
 }
 
 img.wp-post-image {
-  display:block;
+  display: block;
   margin: 30px auto;
 }
 
