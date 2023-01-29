@@ -76,7 +76,7 @@ h6 {
 
 header {
   position: sticky;
-  top: 32px;
+  top: 0px;
   z-index: 999;
 }
 
