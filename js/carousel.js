@@ -125,25 +125,17 @@ const loadArray = async (slide) => {
   loadArray(0); // infinite loop until navigate away
 };
 
-jQuery("#carousel-container").on(
-  "click",
-  "#slide-pause-button",
-  function (event) {
-    pauseFlag = true;
-    loadArray(currentSlide);
-  }
-);
+jQuery("#main").on("click", "#slide-pause-button", function (event) {
+  pauseFlag = true;
+  loadArray(currentSlide);
+});
 
-jQuery("#carousel-container").on(
-  "click",
-  "#slide-play-button",
-  function (event) {
-    pauseFlag = false;
-    loadArray(currentSlide);
-  }
-);
+jQuery("#main").on("click", "#slide-play-button", function (event) {
+  pauseFlag = false;
+  loadArray(currentSlide);
+});
 
-jQuery("#carousel-container").on("click", ".slide-right-btn", function (event) {
+jQuery("#main").on("click", ".slide-right-btn", function (event) {
   pauseFlag = true;
   // if at last slide, go to first slide, otherwise increment currentSlide
   if (currentSlide === heroContentArray.length - 1) {
@@ -154,7 +146,7 @@ jQuery("#carousel-container").on("click", ".slide-right-btn", function (event) {
   loadArray(currentSlide);
 });
 
-jQuery("#carousel-container").on("click", ".slide-left-btn", function (event) {
+jQuery("#main").on("click", ".slide-left-btn", function (event) {
   pauseFlag = true;
   // if at first slide, got to last slide, otherwise decrement currentSlide
   if (currentSlide === 0) {
@@ -165,4 +157,6 @@ jQuery("#carousel-container").on("click", ".slide-left-btn", function (event) {
   loadArray(currentSlide);
 });
 
-loadArray(0);
+if (!pauseFlag) {
+  loadArray(0);
+}
