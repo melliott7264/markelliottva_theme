@@ -156,15 +156,47 @@ ul.dropdown-menu.show {
   z-index: 1;
 }
 
+/* Carousel Styling */
+
+#carousel-container {
+  width: 60vw;
+  height: auto;
+  margin: 0 auto;
+  overflow-x: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.carousel-slide {
+  animation-name: slider;
+  animation-duration: 1s;
+}
+
 .slide-image {
   display: block;
   max-height: 35vh;
   margin: 0px auto;
+  /* animation-name: slider;
+  animation-duration: 1s; */
+}
+
+@keyframes slider {
+  from {
+    transform: translate(100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+#nav-buttons {
+  position: relative;
+  padding: 20px 0px;
 }
 
 .fa-circle-chevron-right {
   position: absolute;
-  bottom: 0%;
+  bottom: 49%;
   right: 10%;
   z-index: 999;
 }
@@ -172,14 +204,14 @@ ul.dropdown-menu.show {
 .fa-circle-pause,
 .fa-circle-play {
   position: absolute;
-  bottom: 0%;
+  bottom: 49%;
   left: 49%;
   z-index: 999;
 }
 
 .fa-circle-chevron-left {
   position: absolute;
-  bottom: 0%;
+  bottom: 49%;
   left: 10%;
   z-index: 999;
 }

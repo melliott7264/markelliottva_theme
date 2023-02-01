@@ -54,7 +54,7 @@ if ( is_front_page() ) {
                         traditional craftsman and artist, he is now back in IT as a developer.  Unless you are extraordinarily talented and productive, one has to go where the market is to make a decent living.</p>
                          -->
                     </div>
-				     
+                    <div id="nav-buttons"></div>
                 </section>
 			</main>
 
