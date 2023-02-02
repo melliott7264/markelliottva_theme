@@ -29,6 +29,7 @@ const heroContentArray = [
 
 // status flags
 let pauseFlag = false;
+let manualNavigationFlag = false;
 let currentSlide = 0;
 
 const buildCarousel = (i) => {
@@ -36,36 +37,46 @@ const buildCarousel = (i) => {
     // define carousel slide container - section
     const carouselContainerEl = jQuery("#carousel-container");
 
+    if (!pauseFlag || manualNavigationFlag) {
+      // remove existing carouselSlideEl to start fresh
+      if (jQuery(".carousel-slide")) {
+        jQuery(".carousel-slide").remove();
+      }
+
+      // rebuild carousel-slide div
+      const newCarouselSlideEl = jQuery("<div>").addClass("carousel-slide");
+      carouselContainerEl.append(newCarouselSlideEl);
+
+      // build carousel slide h2 line
+      const slideHeading = jQuery("<h2>")
+        .addClass("slide-heading")
+        .text(heroContentArray[i].heroHeading);
+
+      // build carousel slide a/img line  - class="slide-image"
+      const slideImage = jQuery("<a>")
+        .addClass("slide-image-link")
+        .attr("href", heroContentArray[i].imageHref)
+        .html(
+          "<img class='slide-image' src=" +
+            heroContentArray[i].imageSrc +
+            " alt=" +
+            heroContentArray[i].imageAlt +
+            " />"
+        );
+
+      // build carousel slide p line  - class="slide-text"
+      const slideText = jQuery("<p>")
+        .addClass("slide-text")
+        .text(heroContentArray[i].heroText);
+
+      // append lines to slide and then to slide container
+      newCarouselSlideEl.append(slideHeading, slideImage, slideText);
+    }
+
     // define buttons element
     navButtonsEl = jQuery("#nav-buttons");
     // empty buttons element so that we don't end up with icons stacked on top of each other
     navButtonsEl.empty();
-
-    // remove existing carouselSlideEl to start fresh
-    if (jQuery(".carousel-slide")) {
-      jQuery(".carousel-slide").remove();
-    }
-
-    // rebuild carousel-slide div
-    const newCarouselSlideEl = jQuery("<div>").addClass("carousel-slide");
-    carouselContainerEl.append(newCarouselSlideEl);
-
-    // build carousel slide h2 line
-    const slideHeading = jQuery("<h2>")
-      .addClass("slide-heading")
-      .text(heroContentArray[i].heroHeading);
-
-    // build carousel slide a/img line  - class="slide-image"
-    const slideImage = jQuery("<a>")
-      .addClass("slide-image-link")
-      .attr("href", heroContentArray[i].imageHref)
-      .html(
-        "<img class='slide-image' src=" +
-          heroContentArray[i].imageSrc +
-          " alt=" +
-          heroContentArray[i].imageAlt +
-          " />"
-      );
 
     // build icon lines
     const leftChevronIcon = jQuery("<i>").addClass(
@@ -79,7 +90,7 @@ const buildCarousel = (i) => {
     // When paused use play icon -  fa-circle-play
     let pausePlayIcon = "";
 
-    if (pauseFlag === true) {
+    if (pauseFlag) {
       pausePlayIcon = jQuery("<i>")
         .attr("id", "slide-play-button")
         .addClass("fa-solid fa-circle-play fa-2xl");
@@ -88,14 +99,6 @@ const buildCarousel = (i) => {
         .attr("id", "slide-pause-button")
         .addClass("fa-solid fa-circle-pause fa-2xl");
     }
-
-    // build carousel slide p line  - class="slide-text"
-    const slideText = jQuery("<p>")
-      .addClass("slide-text")
-      .text(heroContentArray[i].heroText);
-
-    // append lines to slide and then to slide container
-    newCarouselSlideEl.append(slideHeading, slideImage, slideText);
 
     // append buttons to nav buttons div
     navButtonsEl.append(leftChevronIcon, pausePlayIcon, rightChevronIcon);
@@ -110,19 +113,20 @@ const loadArray = async (slide) => {
   // start carousel at passed slide index
   for (let i = slide; i < heroContentArray.length; i++) {
     // if pause button has been not been pressed
-    if (pauseFlag === false) {
+    if (!pauseFlag) {
       // set current slide to index and pass to function to display slide
       currentSlide = i;
       buildCarousel(currentSlide);
     } else {
       // display current slide
-      // need to change pause/play  icon ?  - perhaps need to pull that code out of buildCarousel function?
       buildCarousel(currentSlide);
       return;
     }
     await delay(5000);
   }
-  loadArray(0); // infinite loop until navigate away
+  if (!pauseFlag) {
+    loadArray(0); // infinite loop until navigate away
+  }
 };
 
 jQuery("#main").on("click", "#slide-pause-button", function (event) {
@@ -132,11 +136,18 @@ jQuery("#main").on("click", "#slide-pause-button", function (event) {
 
 jQuery("#main").on("click", "#slide-play-button", function (event) {
   pauseFlag = false;
+  manualNavigationFlag = false;
+  if (currentSlide === heroContentArray.length - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
   loadArray(currentSlide);
 });
 
 jQuery("#main").on("click", ".slide-right-btn", function (event) {
   pauseFlag = true;
+  manualNavigationFlag = true;
   // if at last slide, go to first slide, otherwise increment currentSlide
   if (currentSlide === heroContentArray.length - 1) {
     currentSlide = 0;
@@ -148,6 +159,7 @@ jQuery("#main").on("click", ".slide-right-btn", function (event) {
 
 jQuery("#main").on("click", ".slide-left-btn", function (event) {
   pauseFlag = true;
+  manualNavigationFlag = true;
   // if at first slide, got to last slide, otherwise decrement currentSlide
   if (currentSlide === 0) {
     currentSlide = heroContentArray.length - 1;
