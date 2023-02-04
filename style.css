@@ -167,20 +167,35 @@ ul.dropdown-menu.show {
   position: relative;
 }
 
-.carousel-slide {
-  animation-name: slider;
+.slide-image {
+  display: block;
+  max-height: 30vh;
+  margin: 0px auto;
+}
+/* slide in from the right */
+.carousel-slide-right {
+  animation-name: slider-right;
   animation-duration: 1s;
 }
 
-.slide-image {
-  display: block;
-  max-height: 35vh;
-  margin: 0px auto;
-}
-
-@keyframes slider {
+@keyframes slider-right {
   from {
     transform: translate(100%);
+  }
+  to {
+    transform: translate(0%);
+  }
+}
+
+/* slide in from the left */
+.carousel-slide-left {
+  animation-name: slider-left;
+  animation-duration: 1s;
+}
+
+@keyframes slider-left {
+  from {
+    transform: translate(-100%);
   }
   to {
     transform: translate(0%);

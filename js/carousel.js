@@ -27,24 +27,35 @@ const heroContentArray = [
   },
 ];
 
+// HTML Elements
+const carouselSlideEl = jQuery("#carousel-slide");
+
 // status flags
 let pauseFlag = false;
 let manualNavigationFlag = false;
+let navigationDirection = "right"; // other option is "left"
 let currentSlide = 0;
 
 const buildCarousel = (i) => {
   jQuery(document).ready(function () {
     // define carousel slide container - section
     const carouselContainerEl = jQuery("#carousel-container");
+    const newCarouselSlideEl = jQuery("<div>").attr("id", "carousel-slide");
 
     if (!pauseFlag || manualNavigationFlag) {
       // remove existing carouselSlideEl to start fresh
-      if (jQuery(".carousel-slide")) {
-        jQuery(".carousel-slide").remove();
+      if (carouselSlideEl) {
+        console.log("remove carousel-slide");
+        jQuery("#carousel-slide").remove();
       }
 
       // rebuild carousel-slide div
-      const newCarouselSlideEl = jQuery("<div>").addClass("carousel-slide");
+      if (navigationDirection === "right") {
+        newCarouselSlideEl.addClass("carousel-slide-right");
+      } else {
+        newCarouselSlideEl.addClass("carousel-slide-left");
+      }
+
       carouselContainerEl.append(newCarouselSlideEl);
 
       // build carousel slide h2 line
@@ -137,6 +148,7 @@ jQuery("#main").on("click", "#slide-pause-button", function (event) {
 jQuery("#main").on("click", "#slide-play-button", function (event) {
   pauseFlag = false;
   manualNavigationFlag = false;
+  navigationDirection = "right";
   if (currentSlide === heroContentArray.length - 1) {
     currentSlide = 0;
   } else {
@@ -146,8 +158,11 @@ jQuery("#main").on("click", "#slide-play-button", function (event) {
 });
 
 jQuery("#main").on("click", ".slide-right-btn", function (event) {
+  console.log("click right nav button");
   pauseFlag = true;
   manualNavigationFlag = true;
+  navigationDirection = "right";
+
   // if at last slide, go to first slide, otherwise increment currentSlide
   if (currentSlide === heroContentArray.length - 1) {
     currentSlide = 0;
@@ -158,8 +173,11 @@ jQuery("#main").on("click", ".slide-right-btn", function (event) {
 });
 
 jQuery("#main").on("click", ".slide-left-btn", function (event) {
+  console.log("click left nav button");
   pauseFlag = true;
   manualNavigationFlag = true;
+  navigationDirection = "left";
+
   // if at first slide, got to last slide, otherwise decrement currentSlide
   if (currentSlide === 0) {
     currentSlide = heroContentArray.length - 1;

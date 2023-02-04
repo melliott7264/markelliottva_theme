@@ -41,7 +41,7 @@ if ( is_front_page() ) {
 			<main class="site-main" id="main">  
                  <h1 class="carousel-heading text-center">A Man for All Centuries</h1>
                  <section id="carousel-container"> 
-                    <div class="carousel-slide">
+                    <div id="carousel-slide">
 
                         
                     </div>
