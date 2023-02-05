@@ -45,7 +45,6 @@ const buildCarousel = (i) => {
     if (!pauseFlag || manualNavigationFlag) {
       // remove existing carouselSlideEl to start fresh
       if (carouselSlideEl) {
-        console.log("remove carousel-slide");
         jQuery("#carousel-slide").remove();
       }
 
@@ -158,7 +157,6 @@ jQuery("#main").on("click", "#slide-play-button", function (event) {
 });
 
 jQuery("#main").on("click", ".slide-right-btn", function (event) {
-  console.log("click right nav button");
   pauseFlag = true;
   manualNavigationFlag = true;
   navigationDirection = "right";
@@ -173,7 +171,6 @@ jQuery("#main").on("click", ".slide-right-btn", function (event) {
 });
 
 jQuery("#main").on("click", ".slide-left-btn", function (event) {
-  console.log("click left nav button");
   pauseFlag = true;
   manualNavigationFlag = true;
   navigationDirection = "left";
