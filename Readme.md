@@ -17,16 +17,20 @@ If your README is long, add a table of contents to make it easy for users to fin
 
 The steps to install this theme are as follows:
 
-1. Backup production database
+1. Put production site into maintenance mode.
+2. Update all plugins on development and production
+3. Update WordPress to same version on production as development
+4. Backup production database
    - a. document production site URL
-2. Copy theme to live site.
-3. Copy all new (since December 2022) uploads to live site.
-4. Backup development database.
-5. Import development database into production site.
-6. Edit imported database
+5. Copy markelliottva and understrap themes to live site.
+6. Copy all new (since December 2022) uploads to live site.
+7. Backup development database.
+8. Import development database into production site.
+9. Edit imported database
    - a. change development site URL to production site URL.
-7. Change administrator password on production site
-8. Update links on production WordPress site from markelliottvapersonal.local to markelliottva.com
+10. Change administrator password on production site
+11. Make sure there is a backup administrator account
+12. Use Velvet Blues plugin to update links on production WordPress site from markelliottvapersonal.local to markelliottva.com
 
 ## Usage
 

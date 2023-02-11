@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 	</h2> -->
 	<div id="brand">
 		<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-			<img id="brand-logo" src="/wp-content/uploads/2019/08/MarkElliott-2.jpg" />
+			<img id="brand-logo" src="/wp-content/uploads/2019/08/MarkElliott-2.jpg" alt="Mark Elliott portrait" />
 		</a>
 		
 	</div>
