@@ -1,8 +1,8 @@
-# Personal Website for Mark Elliott - markelliottva.com
+# Markelliottva WordPress Theme
 
 ## Description
 
-This is new WordPress child theme of Understrap for Mark Elliott's personal website at www.markelliottva.com. This site will have a fully custom front page with a hero carousel written in jQuery.
+This is a new WordPress child theme of Understrap for Mark Elliott's personal website at www.markelliottva.com. This site will have a fully custom front page with a hero carousel written in jQuery.
 
 ## Table of Contents (Optional)
 
