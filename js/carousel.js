@@ -2,7 +2,7 @@
 const heroContentArray = [
   {
     heroHeading: "20th & 21st Centuries",
-    imageHref: "https://markelliottvapersonal.local/professional/",
+    imageHref: "https://markelliottva.com/professional/",
     imageSrc: "/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg",
     imageAlt: "Mark Elliott's computer",
     heroText:
@@ -10,15 +10,15 @@ const heroContentArray = [
   },
   {
     heroHeading: "18th & 19th Centuries",
-    imageHref: "https://markelliottvapersonal.local/craftsman/",
+    imageHref: "https://markelliottva.com/craftsman/",
     imageSrc: "/wp-content/uploads/2021/09/WPRifle19-1-scaled.jpg",
     imageAlt: "early Virginia flintlock rifle",
     heroText:
-      "Since I was a teenager, the love of my life has been the American longrifle and longrifle culture.  Over the years, I have produced many longrifles; although not as many as I would have liked.  I have also produced countless powder horns and shot pouches as well as a few knives.  Unfortunately, these interests represent a limited market, and my productivity was never that high.  Making a good living in the traditional crafts has always been elusive.  Those who do make a living at it are involved in a lot of different aspects of the craft as well as being extraordinarily talented and productive.",
+      "Since I was a teenager, the American longrifle and longrifle culture has held a special place in my heart.  Over the years, I have produced many longrifles; although not as many as I would have liked.  I have also produced countless powder horns and shot pouches as well as a few knives.  Unfortunately, these interests represent a limited market, and my productivity was never that high.  Making a good living in the traditional crafts has always been elusive.  Those who do make a living at it are involved in a lot of different aspects of the craft as well as being extraordinarily talented and productive.",
   },
   {
     heroHeading: "18th & 19th Centuries",
-    imageHref: "https://markelliottvapersonal.local/artist/",
+    imageHref: "https://markelliottva.com/artist/",
     imageSrc:
       "/wp-content/uploads/2019/11/marriage_certificate_20190529_0001-scaled.jpg",
     imageAlt: "fraktur marriage certificate",
