@@ -26,8 +26,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
-		
-
 		<button
 			class="navbar-toggler"
 			type="button"
