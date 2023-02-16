@@ -18,8 +18,8 @@ add_action( 'wp_enqueue_scripts', function () {
 });
 
 // The following loads the script to implement the hero carousel on the front page
-function my_theme_scripts() {
-    wp_enqueue_script( 'carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ), '1.0.0', true );
-}
-add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
+// function my_theme_scripts() {
+//     wp_enqueue_script( 'carousel', get_stylesheet_directory_uri() . '/js/carousel.js', array( 'jquery' ), '1.0.0', true );
+// }
+// add_action( 'wp_enqueue_scripts', 'my_theme_scripts' );
 
