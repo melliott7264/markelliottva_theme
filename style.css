@@ -99,7 +99,7 @@ header {
 h1#site-title {
   font-family: "Archivo_Black";
   position: absolute;
-  top: 87px;
+  top: 80px;
   right: 24px;
   font-size: 1.5rem;
   font-weight: 700;
@@ -154,6 +154,12 @@ ul.dropdown-menu.show {
 .content-area {
   margin: 0 auto;
   z-index: 1;
+}
+
+.navbar-toggler {
+  position: absolute;
+  right: 5%;
+  bottom: 5%;
 }
 
 /* Carousel Styling */
