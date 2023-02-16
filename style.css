@@ -99,7 +99,7 @@ header {
 h1#site-title {
   font-family: "Archivo_Black";
   position: absolute;
-  top: 80px;
+  top: 84px;
   right: 24px;
   font-size: 1.5rem;
   font-weight: 700;
@@ -115,7 +115,8 @@ h1#site-title {
   width: 30%;
   height: auto;
   max-width: 350px;
-  top: 0%;
+  min-width: 200px;
+  top: 2%;
   right: 0%;
 }
 
@@ -164,15 +165,16 @@ ul.dropdown-menu.show {
 
 /* Carousel Styling */
 
-/* #carousel-container {
-  width: 95vw;
-  height: auto;
+/* .carousel-item.active {
+  width: 90vw;
   margin: 0 auto;
-  overflow-x: auto;
-  display: inline-block;
-  position: relative;
+  float: none;
 } */
 
+.carousel-item-text {
+  width: 95vw;
+  margin: 0 auto;
+}
 .slide-image {
   display: block;
   max-height: 30vh;
