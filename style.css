@@ -158,20 +158,25 @@ ul.dropdown-menu.show {
 
 /* Carousel Styling */
 
-#carousel-container {
+/* #carousel-container {
   width: 95vw;
   height: auto;
   margin: 0 auto;
   overflow-x: auto;
   display: inline-block;
   position: relative;
-}
+} */
 
 .slide-image {
   display: block;
   max-height: 30vh;
   margin: 0px auto;
 }
+
+div.carousel-indicators {
+  position: relative;
+}
+
 /* slide in from the right */
 .carousel-slide-right {
   animation-name: slider-right;
