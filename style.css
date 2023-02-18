@@ -188,41 +188,41 @@ div.carousel-indicators {
 }
 
 /* slide in from the right */
-.carousel-slide-right {
+/* .carousel-slide-right {
   animation-name: slider-right;
   animation-duration: 1s;
-}
+} */
 
-@keyframes slider-right {
+/* @keyframes slider-right {
   from {
     transform: translate(100%);
   }
   to {
     transform: translate(0%);
   }
-}
+} */
 
 /* slide in from the left */
-.carousel-slide-left {
+/* .carousel-slide-left {
   animation-name: slider-left;
   animation-duration: 1s;
-}
+} */
 
-@keyframes slider-left {
+/* @keyframes slider-left {
   from {
     transform: translate(-100%);
   }
   to {
     transform: translate(0%);
   }
-}
+} */
 
-#nav-buttons {
+/* #nav-buttons {
   position: relative;
   padding: 20px 0px;
-}
+} */
 
-.fa-circle-chevron-right {
+/* .fa-circle-chevron-right {
   position: absolute;
   bottom: 0%;
   right: 10%;
@@ -242,7 +242,7 @@ div.carousel-indicators {
   bottom: 0%;
   left: 10%;
   z-index: 999;
-}
+} */
 
 .entry-header {
   text-align: center;
@@ -272,9 +272,9 @@ img.wp-post-image {
     font-size: 2.25rem;
   }
 
-  #carousel-container {
+  /* #carousel-container {
     width: 95vw;
-  }
+  } */
 
   .carousel-item-text {
     font-size: 1rem;
@@ -300,9 +300,9 @@ img.wp-post-image {
     font-size: 3rem;
   }
 
-  #carousel-container {
+  /* #carousel-container {
     width: 95vw;
-  }
+  } */
 
   .carousel-item-text {
     font-size: 1.1rem;
@@ -328,9 +328,9 @@ img.wp-post-image {
     font-size: 3.75rem;
   }
 
-  #carousel-container {
+  /* #carousel-container {
     width: 60vw;
-  }
+  } */
 
   .carousel-item-text {
     font-size: 1.2rem;
@@ -356,9 +356,9 @@ img.wp-post-image {
     font-size: 4rem;
   }
 
-  #carousel-container {
+  /* #carousel-container {
     width: 60vw;
-  }
+  } */
 
   .carousel-item-text {
     font-size: 1.3rem;
