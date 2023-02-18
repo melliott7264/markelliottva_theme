@@ -172,8 +172,10 @@ ul.dropdown-menu.show {
 } */
 
 .carousel-item-text {
-  width: 95vw;
+  width: 90vw;
   margin: 0 auto;
+  font-family: "Archivo_Black";
+  font-size: 0.9rem;
 }
 .slide-image {
   display: block;
@@ -273,6 +275,10 @@ img.wp-post-image {
   #carousel-container {
     width: 95vw;
   }
+
+  .carousel-item-text {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 510px) {
@@ -297,6 +303,10 @@ img.wp-post-image {
   #carousel-container {
     width: 95vw;
   }
+
+  .carousel-item-text {
+    font-size: 1.1rem;
+  }
 }
 
 @media screen and (min-width: 800px) {
@@ -317,8 +327,13 @@ img.wp-post-image {
   h1#site-title {
     font-size: 3.75rem;
   }
+
   #carousel-container {
     width: 60vw;
+  }
+
+  .carousel-item-text {
+    font-size: 1.2rem;
   }
 }
 
@@ -343,5 +358,9 @@ img.wp-post-image {
 
   #carousel-container {
     width: 60vw;
+  }
+
+  .carousel-item-text {
+    font-size: 1.3rem;
   }
 }
