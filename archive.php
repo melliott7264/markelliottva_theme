@@ -21,7 +21,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<div class="row d-flex justify-content-center">
 
-			<div class="col-md-8 content-area " > <!-- inserted to limit page width -->
+			<!-- <div class="col-md-8 content-area " > inserted to limit page width -->
 
 			<?php
 			// Do the left sidebar check and open div#primary.
@@ -66,7 +66,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			get_template_part( 'global-templates/right-sidebar-check' );
 			?>
 
-			</div> <!-- inserted to limit page width -->
+			<!-- </div> inserted to limit page width -->
 
 		</div><!-- .row -->
 

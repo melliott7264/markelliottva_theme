@@ -30,7 +30,7 @@ if ( is_front_page() ) {
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row d-flex justify-content-center">
-			<div class="col-md-8 content-area " > <!-- inserted to limit page width -->
+			<!-- <div class="col-md-8 content-area " > inserted to limit page width -->
 
 			<?php
 			// Do the left sidebar check and open div#primary.
@@ -82,7 +82,7 @@ if ( is_front_page() ) {
 
 			</div>
 
-            </div>
+            <!-- </div> -->
 
 			<?php
 			// Do the right sidebar check and close div#primary.
