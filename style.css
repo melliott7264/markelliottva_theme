@@ -99,8 +99,8 @@ header {
 h1#site-title {
   font-family: "Archivo_Black";
   position: absolute;
-  top: 84px;
-  right: 24px;
+  top: 100px;
+  right: 2%;
   font-size: 1.5rem;
   font-weight: 700;
 }
@@ -157,23 +157,17 @@ ul.dropdown-menu.show {
   z-index: 1;
 }
 
+/* Locate hamburger icon */
+
 .navbar-toggler {
   position: absolute;
-  right: 5%;
+  right: 2%;
   bottom: 5%;
 }
 
 /* Carousel Styling */
 
-/* .carousel-item.active {
-  width: 90vw;
-  margin: 0 auto;
-  float: none;
-} */
-
 .carousel-item-text {
-  width: 90vw;
-  margin: 0 auto;
   font-family: "Archivo_Black";
   font-size: 0.9rem;
 }
@@ -187,62 +181,7 @@ div.carousel-indicators {
   position: relative;
 }
 
-/* slide in from the right */
-/* .carousel-slide-right {
-  animation-name: slider-right;
-  animation-duration: 1s;
-} */
-
-/* @keyframes slider-right {
-  from {
-    transform: translate(100%);
-  }
-  to {
-    transform: translate(0%);
-  }
-} */
-
-/* slide in from the left */
-/* .carousel-slide-left {
-  animation-name: slider-left;
-  animation-duration: 1s;
-} */
-
-/* @keyframes slider-left {
-  from {
-    transform: translate(-100%);
-  }
-  to {
-    transform: translate(0%);
-  }
-} */
-
-/* #nav-buttons {
-  position: relative;
-  padding: 20px 0px;
-} */
-
-/* .fa-circle-chevron-right {
-  position: absolute;
-  bottom: 0%;
-  right: 10%;
-  z-index: 999;
-}
-
-.fa-circle-pause,
-.fa-circle-play {
-  position: absolute;
-  bottom: 0%;
-  left: 49%;
-  z-index: 999;
-}
-
-.fa-circle-chevron-left {
-  position: absolute;
-  bottom: 0%;
-  left: 10%;
-  z-index: 999;
-} */
+/* End Carousel Styling */
 
 .entry-header {
   text-align: center;
@@ -272,10 +211,6 @@ img.wp-post-image {
     font-size: 2.25rem;
   }
 
-  /* #carousel-container {
-    width: 95vw;
-  } */
-
   .carousel-item-text {
     font-size: 1rem;
   }
@@ -300,16 +235,12 @@ img.wp-post-image {
     font-size: 3rem;
   }
 
-  /* #carousel-container {
-    width: 95vw;
-  } */
-
   .carousel-item-text {
     font-size: 1.1rem;
   }
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   h1.carousel-heading,
   h1.entry-title,
   h1.page-title,
@@ -328,12 +259,15 @@ img.wp-post-image {
     font-size: 3.75rem;
   }
 
-  /* #carousel-container {
-    width: 60vw;
-  } */
-
   .carousel-item-text {
     font-size: 1.2rem;
+  }
+
+  /* Locate nav menu above 768px */
+  #navbarNavDropdown {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
   }
 }
 
@@ -356,11 +290,14 @@ img.wp-post-image {
     font-size: 4rem;
   }
 
-  /* #carousel-container {
-    width: 60vw;
-  } */
-
   .carousel-item-text {
     font-size: 1.3rem;
+  }
+
+  /* Locate nav menu above 768px */
+  #navbarNavDropdown {
+    position: absolute;
+    right: 2%;
+    bottom: 5%;
   }
 }

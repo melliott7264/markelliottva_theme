@@ -30,6 +30,7 @@ if ( is_front_page() ) {
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row d-flex justify-content-center">
+			<div class="col-md-8 content-area " > <!-- inserted to limit page width -->
 
 			<?php
 			// Do the left sidebar check and open div#primary.
@@ -43,28 +44,20 @@ if ( is_front_page() ) {
                  <div id="carouselExampleCaptions" class="carousel carousel-dark slide" data-bs-ride="carousel">
 			
 					<div class="carousel-inner">
-						<div class="carousel-item active" data-bs-interval="7000">
-						<h2 class="slide-heading">20th & 21st Centuries</h2>
-						<a href="/professional/"><img class="slide-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" class="d-block w-100" alt="Mark Elliott's computer"></a>
-						<div class="">
+						<div class="carousel-item active" data-bs-interval="15000">
+							<h2 class="slide-heading">20th & 21st Centuries</h2>
+							<a href="/professional/"><img class="slide-image" src="/wp-content/uploads/2023/01/ComputerDesk-1-scaled.jpg" class="d-block w-100" alt="Mark Elliott's computer"></a>
 							<p class="carousel-item-text">I have mostly earned my living in Information Technology, both in the 20th and 21st centuries. I have been coding since the early days of personal computers and spent the first 20 or so years of my working life in IT operations, mostly in the role of a systems engineer supporting Intel servers in data centers of various sizes. I also briefly taught technology at the high school and college level in the early 2000's.  After 12 years of trying to make a go of working as a traditional craftsman and artist, I am now back in IT as a developer.</p>
 						</div>
-						</div>
-						<div class="carousel-item" data-bs-interval="7000">
-						<h2 class="slide-heading">18th & 19th Centuries</h2>
-						<a href="/craftsman/"><img class="slide-image" src="/wp-content/uploads/2021/09/WPRifle19-1-scaled.jpg" class="d-block w-100" alt="early Virginia flintlock rifle"></a>
-						<div class="">
-				
+						<div class="carousel-item" data-bs-interval="12000">
+							<h2 class="slide-heading">18th & 19th Centuries</h2>
+							<a href="/craftsman/"><img class="slide-image" src="/wp-content/uploads/2021/09/WPRifle19-1-scaled.jpg" class="d-block w-100" alt="early Virginia flintlock rifle"></a>
 							<p class="carousel-item-text">Since I was a teenager, the American longrifle and longrifle culture has held a special place in my heart.  Over the years, I have produced many longrifles.  I have also produced countless powder horns and shot pouches as well as a few knives.  After a number of years trying to make a living practicing my traditional crafts, I am now pursuing it just as a hobby.</p>
 						</div>
-						</div>
-						<div class="carousel-item" data-bs-interval="7000">
-						<h2 class="slide-heading">18th & 19th Centuries</h2>
-						<a href="/artist/"><img class="slide-image" src="/wp-content/uploads/2019/11/marriage_certificate_20190529_0001-scaled.jpg" class="d-block w-100" alt="fraktur marriage certificate"></a>
-						<div class="">
-		
+						<div class="carousel-item" data-bs-interval="11000">
+							<h2 class="slide-heading">18th & 19th Centuries</h2>
+							<a href="/artist/"><img class="slide-image" src="/wp-content/uploads/2019/11/marriage_certificate_20190529_0001-scaled.jpg" class="d-block w-100" alt="fraktur marriage certificate"></a>
 							<p class="carousel-item-text">I have been an artist my entire life producing art in many different media. Currently I pursue my artistic expression in the form of fraktur - 18th and 19th century decorative documents mostly associated with the German-American community.</p>
-						</div>
 						</div>
 					</div>
 					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -87,9 +80,9 @@ if ( is_front_page() ) {
 
 			</main>
 
-            </div>
+			</div>
 
-			
+            </div>
 
 			<?php
 			// Do the right sidebar check and close div#primary.
