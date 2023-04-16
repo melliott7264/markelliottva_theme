@@ -17,12 +17,6 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="archive-wrapper">
 
-<!-- <?php
-if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb( '</p><p id=breadcrumbs2>','</p><p>' );
-}
-?> -->
-
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
 		<div class="row d-flex justify-content-center">
