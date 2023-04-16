@@ -25,11 +25,11 @@ if ( is_page_template( 'page-templates/no-title.php' ) ) {
 
 <div class="wrapper" id="<?php echo $wrapper_id; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- ok. ?>">
 
-<?php
+<!-- <?php
 if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb( '</p><p id=breadcrumbs>','</p><p>' );
+yoast_breadcrumb( '</p><p id=breadcrumbs2>','</p><p>' );
 }
-?>
+?> -->
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content">
 

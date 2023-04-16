@@ -37,6 +37,11 @@ $navbar_type       = get_theme_mod( 'understrap_navbar_type', 'collapse' );
 		<a class="skip-link" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
 		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
-
+		
+		<?php
+			if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb( '</p><p id=breadcrumbs>','</p><p>' );
+			}
+		?>
 
 	</header><!-- #wrapper-navbar -->

@@ -17,8 +17,10 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 	<div class="<?php echo esc_attr( $container ); ?>">
 
+
 		<!-- Your site branding -->
 		<?php get_template_part( 'global-templates/navbar-branding' ); ?>
+
 
 			<!-- Icon and link for Muzzleloader Range Log -->
 		<h1 id="site-title"><?php bloginfo( 'name' ); ?></h1>
@@ -53,7 +55,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 			)
 		);
 		?>
-		
+
 	</div><!-- .container(-fluid) -->
-	
+
 </nav><!-- #main-nav -->

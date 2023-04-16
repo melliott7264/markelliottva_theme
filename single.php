@@ -14,11 +14,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 <div class="wrapper" id="single-wrapper">
 
-<?php
+<!-- <?php
 if ( function_exists('yoast_breadcrumb') ) {
-yoast_breadcrumb( '</p><p id=breadcrumbs>','</p><p>' );
+yoast_breadcrumb( '</p><p id=breadcrumbs2>','</p><p>' );
 }
-?>
+?> -->
 
 	<div class="<?php echo esc_attr( $container ); ?>" id="content" tabindex="-1">
 
