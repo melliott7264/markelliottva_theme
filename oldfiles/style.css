@@ -74,19 +74,10 @@ h6 {
   font-weight: 700;
 }
 
-header#wrapper-navbar {
+header {
   position: sticky;
   top: 0px;
-  height: 300px;
-  background-color: #f8f9fa;
   z-index: 999;
-}
-
-/* Locates responsive navbar below breadcrumbs */
-.navbar-collapse {
-  position: relative;
-  bottom: -60px;
-  background-color: #f8f9fa;
 }
 
 #brand {
@@ -101,7 +92,6 @@ header#wrapper-navbar {
   left: 0%;
   width: 150px;
   height: auto;
-  aspect-ratio: auto 225 / 300;
   border: 2px solid black;
   border-radius: 10px;
 }
@@ -121,7 +111,13 @@ h1#site-title {
 }
 
 #range-log-logo {
-  display: none;
+  position: absolute;
+  width: 30%;
+  height: auto;
+  max-width: 350px;
+  min-width: 200px;
+  top: 2%;
+  right: 0%;
 }
 
 #artist-image {
@@ -166,15 +162,7 @@ ul.dropdown-menu.show {
 .navbar-toggler {
   position: absolute;
   right: 2%;
-  top: 2%;
-}
-
-/* Locate breadcrumbs at bottom of header */
-
-p#breadcrumbs {
-  position: absolute;
-  bottom: 0;
-  right: 2%;
+  bottom: 5%;
 }
 
 /* Carousel Styling */
@@ -223,10 +211,6 @@ img.wp-post-image {
     font-size: 2.25rem;
   }
 
-  #range-log-logo {
-    display: none;
-  }
-
   .carousel-item-text {
     font-size: 1rem;
   }
@@ -249,10 +233,6 @@ img.wp-post-image {
 
   h1#site-title {
     font-size: 3rem;
-  }
-
-  #range-log-logo {
-    display: none;
   }
 
   .carousel-item-text {
@@ -279,18 +259,6 @@ img.wp-post-image {
     font-size: 3.75rem;
   }
 
-  #range-log-logo {
-    display: inline;
-    position: absolute;
-    width: 30%;
-    height: auto;
-    max-width: 350px;
-    min-width: 200px;
-    aspect-ratio: auto 350 / 88;
-    top: 2%;
-    right: 0%;
-  }
-
   .carousel-item-text {
     font-size: 1.2rem;
   }
@@ -299,7 +267,7 @@ img.wp-post-image {
   #navbarNavDropdown {
     position: absolute;
     right: 2%;
-    bottom: 2%;
+    bottom: 5%;
   }
 }
 
@@ -322,18 +290,6 @@ img.wp-post-image {
     font-size: 4rem;
   }
 
-  #range-log-logo {
-    display: inline;
-    position: absolute;
-    width: 30%;
-    height: auto;
-    max-width: 350px;
-    min-width: 200px;
-    aspect-ratio: auto 350 / 88;
-    top: 2%;
-    right: 0%;
-  }
-
   .carousel-item-text {
     font-size: 1.3rem;
   }
@@ -342,6 +298,6 @@ img.wp-post-image {
   #navbarNavDropdown {
     position: absolute;
     right: 2%;
-    bottom: 2%;
+    bottom: 5%;
   }
 }

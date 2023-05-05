@@ -14,7 +14,7 @@ if ( ! has_custom_logo() ) { ?>
 	<!-- Site branding with small portrait -->
 	<div id="brand">
 		<a class="navbar-brand" rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" itemprop="url">
-			<img id="brand-logo" src="/wp-content/uploads/2019/08/MarkElliott-2.jpg" alt="Mark Elliott portrait" />
+			<img id="brand-logo" src="/wp-content/uploads/2019/08/MarkElliott-2-225x300.jpg" alt="Mark Elliott portrait" />
 		</a>
 		
 	</div>
